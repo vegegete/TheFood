@@ -24,8 +24,11 @@ class ViewController: UIViewController {
     }
     
     func parseJson (meal: String) {
-        
-        if let url = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?s=\(meal)") {
+        var mealStripped = meal
+        if meal.contains(" ") {
+        mealStripped.removeAll(where: {$0 == " "})
+        }
+        if let url = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?s=\(mealStripped)") {
         
         let urlSession = URLSession(configuration: .default)
         
