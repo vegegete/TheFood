@@ -8,12 +8,37 @@
 
 import UIKit
 
+//protocol Meal {
+//    func fetchMealInfo(_ meal: MealResultModel)
+//}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+         
     }
+    
+    
+    //var delegate: Meal?
+    
+    var resultingData: MealResultModel? {
+        willSet {
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "goToTable", sender: self)
+            }
+            
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+              if let destinationVC = segue.destination as? MealTableTableViewController {
+                    if let res = resultingData {
+                        destinationVC.result = res
+                    }
+                }
+    }
+    
 
     @IBOutlet weak var mealName: UITextField!
     
@@ -39,26 +64,40 @@ class ViewController: UIViewController {
             
             if let safeData = data {
                 if let result = self.decodeJSON(safeData) {
-                DispatchQueue.main.async {
-                    
-                    self.mealDetails.text = """
-                    This meal's full name is \(result.strMeal).
-                    It is a \(result.strCategory) meal.
-                    It's origin is \(result.strArea).
-                    """
-                    
-                }
+                    self.resultingData = MealResultModel(name: result.strMeal, category: result.strCategory, origin: result.strArea)
+                    //self.delegate?.fetchMealInfo(resultingData!)
+//
+//                DispatchQueue.main.async {
+//
+//                    self.mealDetails.text = """
+//                    This meal's full name is \(result.strMeal).
+//                    It is a \(result.strCategory) meal.
+//                    It's origin is \(result.strArea).
+//                    """
+//
+//                }
             }
+                
+               
             }
             
         }
              task.resume()
             
     }
-        
-       
-        
+         
     }
+    
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let destinationVC = segue.destination as? MealTableTableViewController {
+//            if let res = resultingData {
+//                 destinationVC.fetchMealInfo(res)
+//            }
+//        }
+//        
+//    }
+
     
     
     func decodeJSON (_ model: Data) -> Meals? {
