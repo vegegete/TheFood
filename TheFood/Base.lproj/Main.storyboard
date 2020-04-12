@@ -29,7 +29,6 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UZy-GA-iXV">
                                                         <rect key="frame" x="0.0" y="0.0" width="137.5" height="76.5"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PaQ-Yr-msS">
                                                         <rect key="frame" x="138.5" y="0.0" width="137" height="76.5"/>
@@ -38,21 +37,18 @@
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBE-tS-oHa">
                                                         <rect key="frame" x="276.5" y="0.0" width="137.5" height="76.5"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.92549019610000005" green="0.78823529410000004" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNT-fe-5lK">
                                                 <rect key="frame" x="0.0" y="155" width="414" height="76.5"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Q6m-4e-CGs" userLabel="SearchButton">
                                                 <rect key="frame" x="0.0" y="232.5" width="414" height="76.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Jj-7S-IoK">
                                                         <rect key="frame" x="0.0" y="0.0" width="137.5" height="76.5"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftj-yI-2cF">
                                                         <rect key="frame" x="138.5" y="0.0" width="137" height="76.5"/>
@@ -64,7 +60,6 @@
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXd-wR-pYz">
                                                         <rect key="frame" x="276.5" y="0.0" width="137.5" height="76.5"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.68235294120000001" green="0.17254901959999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -80,7 +75,6 @@
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rO5-YX-kYJ">
                                         <rect key="frame" x="0.0" y="387.5" width="414" height="386.5"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -101,6 +95,7 @@
                     <connections>
                         <outlet property="mealDetails" destination="rO5-YX-kYJ" id="MDN-hu-a9e"/>
                         <outlet property="mealName" destination="PaQ-Yr-msS" id="XW6-SG-i9o"/>
+                        <outlet property="searchButton" destination="Ftj-yI-2cF" id="51X-3o-j4C"/>
                         <segue destination="tQi-ZI-rS1" kind="show" identifier="goToTable" id="gqB-kT-7sc"/>
                     </connections>
                 </viewController>

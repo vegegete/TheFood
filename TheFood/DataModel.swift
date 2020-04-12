@@ -7,7 +7,7 @@
 //  Copyright © 2020 Nenad Matic. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct MealModel: Codable {
     var meals: [Meals]
@@ -17,6 +17,7 @@ struct Meals: Codable {
     var strMeal: String
     var strCategory: String
     var strArea: String
+    var strMealThumb: String
 }
 
  
