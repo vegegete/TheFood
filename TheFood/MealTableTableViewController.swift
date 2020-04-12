@@ -18,7 +18,6 @@ class MealTableTableViewController: UITableViewController {
             resultArray.append(newValue.category!)
             resultArray.append(newValue.origin!)
 
-          tableView.reloadData()
         }
     }
     
@@ -31,9 +30,7 @@ class MealTableTableViewController: UITableViewController {
     
     }
     
-    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
-        resultArray = []
-    }
+ 
 
     // MARK: - Table view data source
 
@@ -43,8 +40,9 @@ class MealTableTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        print(resultArray.count)
         return resultArray.count
+        
     }
 
     
@@ -54,7 +52,6 @@ class MealTableTableViewController: UITableViewController {
       
         cell.textLabel?.text = resultArray[indexPath.row]
        
-        
         return cell
         
     }
