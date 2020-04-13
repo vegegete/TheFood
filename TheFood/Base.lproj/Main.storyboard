@@ -16,42 +16,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="liR-qO-YjB">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="3na-8e-5lI">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="386.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="360.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSk-Ap-wIb" userLabel="PaddingView">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="76.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="71.5"/>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ic6-pX-Vmq" userLabel="EnterMeal">
-                                                <rect key="frame" x="0.0" y="77.5" width="414" height="76.5"/>
+                                                <rect key="frame" x="0.0" y="72.5" width="414" height="71"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UZy-GA-iXV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="76.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="71"/>
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PaQ-Yr-msS">
-                                                        <rect key="frame" x="138.5" y="0.0" width="137" height="76.5"/>
+                                                        <rect key="frame" x="138.5" y="0.0" width="137" height="71"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBE-tS-oHa">
-                                                        <rect key="frame" x="276.5" y="0.0" width="137.5" height="76.5"/>
+                                                        <rect key="frame" x="276.5" y="0.0" width="137.5" height="71"/>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.92549019610000005" green="0.78823529410000004" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNT-fe-5lK">
-                                                <rect key="frame" x="0.0" y="155" width="414" height="76.5"/>
+                                                <rect key="frame" x="0.0" y="144.5" width="414" height="71.5"/>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Q6m-4e-CGs" userLabel="SearchButton">
-                                                <rect key="frame" x="0.0" y="232.5" width="414" height="76.5"/>
+                                                <rect key="frame" x="0.0" y="217" width="414" height="71"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Jj-7S-IoK">
-                                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="76.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="71"/>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftj-yI-2cF">
-                                                        <rect key="frame" x="138.5" y="0.0" width="137" height="76.5"/>
+                                                        <rect key="frame" x="138.5" y="0.0" width="137" height="71"/>
                                                         <color key="backgroundColor" red="0.92549019610000005" green="0.78823529410000004" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Search"/>
                                                         <connections>
@@ -59,13 +59,13 @@
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXd-wR-pYz">
-                                                        <rect key="frame" x="276.5" y="0.0" width="137.5" height="76.5"/>
+                                                        <rect key="frame" x="276.5" y="0.0" width="137.5" height="71"/>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.68235294120000001" green="0.17254901959999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3WU-5x-V8B" userLabel="PaddingView">
-                                                <rect key="frame" x="0.0" y="310" width="414" height="76.5"/>
+                                                <rect key="frame" x="0.0" y="289" width="414" height="71.5"/>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -74,7 +74,7 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rO5-YX-kYJ">
-                                        <rect key="frame" x="0.0" y="387.5" width="414" height="386.5"/>
+                                        <rect key="frame" x="0.0" y="361.5" width="414" height="360.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -94,7 +94,7 @@
                                             <constraint firstAttribute="height" constant="70" id="GMm-zq-tRw"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Recipe"/>
+                                        <state key="normal" title="Ingredients"/>
                                         <connections>
                                             <action selector="goToRecipe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q1U-5o-Smz"/>
                                         </connections>
@@ -127,7 +127,7 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="118.52678571428571"/>
         </scene>
-        <!--Recipe-->
+        <!--Ingredients-->
         <scene sceneID="WEo-4m-vaU">
             <objects>
                 <tableViewController id="tQi-ZI-rS1" customClass="MealTableTableViewController" customModule="TheFood" customModuleProvider="target" sceneMemberID="viewController">
@@ -150,7 +150,7 @@
                             <outlet property="delegate" destination="tQi-ZI-rS1" id="CTU-pG-25z"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recipe" id="pkY-j3-Spw"/>
+                    <navigationItem key="navigationItem" title="Ingredients" id="pkY-j3-Spw"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AUo-Sv-gzf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,8 +161,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gxq-3q-HhP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yCR-KR-2i0">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="yCR-KR-2i0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
