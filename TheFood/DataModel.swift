@@ -20,13 +20,24 @@ struct Meals: Codable {
     var strMealThumb: String
 }
 
- 
- 
-/*
 
-"strMeal": "Spicy Arrabiata Penne",
-"strDrinkAlternate": null,
-"strCategory": "Vegetarian",
-"strArea": "Italian",
- 
-*/
+//"strIngredient1": "Lentils",
+//"strIngredient2": "Onion",
+//"strIngredient3": "Carrots",
+//"strIngredient4": "Tomato Puree",
+//"strIngredient5": "Cumin",
+//"strIngredient6": "Paprika",
+//"strIngredient7": "Mint",
+//"strIngredient8": "Thyme",
+//"strIngredient9": "Black Pepper",
+//"strIngredient10": "Red Pepper Flakes",
+//"strIngredient11": "Vegetable Stock",
+//"strIngredient12": "Water",
+//"strIngredient13": "Sea Salt",
+//"strIngredient14": "",
+//"strIngredient15": "",
+//"strIngredient16": "",
+//"strIngredient17": "",
+//"strIngredient18": "",
+//"strIngredient19": "",
+//"strIngredient20": "",

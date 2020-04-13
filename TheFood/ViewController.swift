@@ -16,7 +16,29 @@ class ViewController: UIViewController {
     
     let backgroundImage = UIImageView()
     
-    func setBackgroundIMage() {
+    func setSearchButtonLook () {
+        searchButton.backgroundColor = .red
+        searchButton.layer.cornerRadius = 20
+        searchButton.layer.borderWidth = 1
+        searchButton.layer.borderColor = UIColor.black.cgColor
+    }
+    
+    @IBOutlet weak var recipeButton: UIButton!
+    
+    func setRecipeButtonEdges () {
+         
+         recipeButton.layer.cornerRadius = 25
+         recipeButton.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+         
+     }
+    
+    @IBAction func goToRecipe(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goToTable", sender: self)
+    }
+    
+    
+    func setBackgroundImage() {
+        view.addSubview(backgroundImage)
         backgroundImage.translatesAutoresizingMaskIntoConstraints = false
         backgroundImage.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -25,42 +47,28 @@ class ViewController: UIViewController {
         backgroundImage.contentMode = .scaleAspectFill
         
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-         
+        setRecipeButtonEdges()
+        setSearchButtonLook()
+        setBackgroundImage()
     }
     
     
     //var delegate: Meal?
     
-    var resultingData: MealResultModel? {
-        willSet {
-            DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "goToTable", sender: self)
-            }
-            
-        }
-    }
+    var resultingData: MealResultModel?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-              if let destinationVC = segue.destination as? MealTableTableViewController {
-                    if let res = resultingData {
-                        destinationVC.result = res
-                    }
-                }
-
-        searchButton.backgroundColor = .clear
-        searchButton.layer.cornerRadius = 20
-        searchButton.layer.borderWidth = 1
-        searchButton.layer.borderColor = UIColor.black.cgColor
-        view.addSubview(backgroundImage)
-        setBackgroundIMage()
-
+        if let destinationVC = segue.destination as? MealTableTableViewController {
+            if let res = resultingData {
+                destinationVC.result = res
+            }
+        }
     }
-    
 
+    
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var mealName: UITextField!
     
@@ -73,74 +81,49 @@ class ViewController: UIViewController {
     func parseJson (meal: String) {
         var mealStripped = meal
         if meal.contains(" ") {
-        mealStripped.removeAll(where: {$0 == " "})
+            mealStripped.removeAll(where: {$0 == " "})
         }
         if let url = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?s=\(mealStripped)") {
-        
-        let urlSession = URLSession(configuration: .default)
-        
-        let task = urlSession.dataTask(with: url) { (data, response, error) in
-            if error != nil {
-                print(error)
-            }
             
-            if let safeData = data {
-                if let result = self.decodeJSON(safeData) {
-                    self.resultingData = MealResultModel(name: result.strMeal, category: result.strCategory, origin: result.strArea)
-                    //self.delegate?.fetchMealInfo(resultingData!)
-//
-//                DispatchQueue.main.async {
-//
-//                    self.mealDetails.text = """
-//                    This meal's full name is \(result.strMeal).
-//                    It is a \(result.strCategory) meal.
-//                    It's origin is \(result.strArea).
-//                    """
-//
-//                }
-
-                DispatchQueue.main.async {
-                    
-                    self.mealDetails.text = """
-                    This meal's full name is \(result.strMeal).
-                    It is a \(result.strCategory) meal.
-                    It's origin is \(result.strArea).
-                    """
-                    let imageURL = URL(string: result.strMealThumb)
-                    let imageData = try? Data(contentsOf: imageURL!)
-                    let mealImage = UIImage(data: imageData!)!
-                    self.backgroundImage.image = mealImage
-                    self.view.sendSubviewToBack(self.backgroundImage)
+            let urlSession = URLSession(configuration: .default)
+            
+            urlSession.dataTask(with: url) { (data, response, error) in
+                if error != nil {
+                    print(error!)
                 }
-
-            }
                 
-               
-            }
+                if let safeData = data {
+                    if let result = self.decodeJSON(safeData) {
+                        self.resultingData = MealResultModel(name: result.strMeal, category: result.strCategory, origin: result.strArea)
+                        
+                        DispatchQueue.main.async {
+                            
+                            self.mealDetails.text = """
+                            This meal's full name is \(result.strMeal).
+                            It is a \(result.strCategory) meal.
+                            It's origin is \(result.strArea).
+                            """
+                            let imageURL = URL(string: result.strMealThumb)
+                            let imageData = try? Data(contentsOf: imageURL!)
+                            let mealImage = UIImage(data: imageData!)!
+                            self.backgroundImage.image = mealImage
+                            self.view.sendSubviewToBack(self.backgroundImage)
+                        }
+                        
+                    }
+                    
+                }
+                
+            }.resume()
             
         }
-             task.resume()
-            
+        
     }
-         
-    }
-    
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destinationVC = segue.destination as? MealTableTableViewController {
-//            if let res = resultingData {
-//                 destinationVC.fetchMealInfo(res)
-//            }
-//        }
-//        
-//    }
-
-    
     
     func decodeJSON (_ model: Data) -> Meals? {
         
         do {
-        let decodedData = try JSONDecoder().decode(MealModel.self, from: model)
+            let decodedData = try JSONDecoder().decode(MealModel.self, from: model)
             let name = decodedData.meals[0].strMeal
             let category = decodedData.meals[0].strCategory
             let origin = decodedData.meals[0].strArea
@@ -154,7 +137,8 @@ class ViewController: UIViewController {
         }
         
         return nil
-            
+        
     }
+ 
 }
 

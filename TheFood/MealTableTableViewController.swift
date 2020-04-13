@@ -40,7 +40,6 @@ class MealTableTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(resultArray.count)
         return resultArray.count
         
     }
